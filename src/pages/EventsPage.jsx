@@ -60,7 +60,9 @@ export const EventsPage = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const response = await fetch("http://localhost:3000/events");
+      const response = await fetch(
+        "https://event-data-16fda6375eb3.herokuapp.com/events"
+      );
       const json = await response.json();
       setEvents(json);
     };

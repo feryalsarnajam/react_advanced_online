@@ -21,7 +21,9 @@ import { CategoryElement } from "../components/CategoryElement";
 import { EditIcon } from "@chakra-ui/icons";
 
 export const loader = async ({ params }) => {
-  const event = await fetch(`http://localhost:3000/events/${params.eventId}`);
+  const event = await fetch(
+    `https://event-data-16fda6375eb3.herokuapp.com/events/${params.eventId}`
+  );
   return {
     event: await event.json(),
   };
@@ -46,10 +48,13 @@ export const EventPage = () => {
   //delete button function
   const navigate = useNavigate();
   const deleteEvent = async () => {
-    await fetch(`http://localhost:3000/events/${event.id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json;charset=utf-8" },
-    });
+    await fetch(
+      `https://event-data-16fda6375eb3.herokuapp.com/events/${event.id}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+      }
+    );
     navigate(`/`);
   };
 
@@ -63,11 +68,14 @@ export const EventPage = () => {
   };
 
   const updateEvent = async (event) => {
-    const response = await fetch(`http://localhost:3000/events/${event.id}`, {
-      method: "PUT",
-      body: JSON.stringify(event),
-      headers: { "Content-Type": "application/json;charset=utf-8" },
-    });
+    const response = await fetch(
+      `https://event-data-16fda6375eb3.herokuapp.com/events/${event.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(event),
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+      }
+    );
 
     if (response.status === 200) {
       toast({

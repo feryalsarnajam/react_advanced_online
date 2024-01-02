@@ -20,11 +20,14 @@ export const AddEvent = () => {
 
   //create a new event
   const createEvent = async (event) => {
-    const response = await fetch("http://localhost:3000/events", {
-      method: "POST",
-      body: JSON.stringify(event),
-      headers: { "Content-Type": "application/json;charset=utf-8" },
-    });
+    const response = await fetch(
+      "https://event-data-16fda6375eb3.herokuapp.com/events",
+      {
+        method: "POST",
+        body: JSON.stringify(event),
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+      }
+    );
 
     if (response.status === 201) {
       toast({
