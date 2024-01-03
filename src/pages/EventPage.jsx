@@ -22,7 +22,7 @@ import { EditIcon } from "@chakra-ui/icons";
 
 export const loader = async ({ params }) => {
   const event = await fetch(
-    `https://event-data-16fda6375eb3.herokuapp.com/events/${params.eventId}`
+    `https://git.heroku.com/event-data.git/events/${params.eventId}`
   );
   return {
     event: await event.json(),
@@ -48,13 +48,10 @@ export const EventPage = () => {
   //delete button function
   const navigate = useNavigate();
   const deleteEvent = async () => {
-    await fetch(
-      `https://event-data-16fda6375eb3.herokuapp.com/events/${event.id}`,
-      {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json;charset=utf-8" },
-      }
-    );
+    await fetch(`https://git.heroku.com/event-data.git/events/${event.id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json;charset=utf-8" },
+    });
     navigate(`/`);
   };
 
@@ -69,7 +66,7 @@ export const EventPage = () => {
 
   const updateEvent = async (event) => {
     const response = await fetch(
-      `https://event-data-16fda6375eb3.herokuapp.com/events/${event.id}`,
+      `https://git.heroku.com/event-data.git/events/${event.id}`,
       {
         method: "PUT",
         body: JSON.stringify(event),

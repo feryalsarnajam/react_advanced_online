@@ -61,7 +61,7 @@ export const EventsPage = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       const response = await fetch(
-        "https://event-data-16fda6375eb3.herokuapp.com/events"
+        "https://git.heroku.com/event-data.git/events"
       );
       const json = await response.json();
       setEvents(json);

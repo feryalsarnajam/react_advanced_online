@@ -17,7 +17,6 @@ import { EventContext } from "./Contexts";
 export const Form = ({ event, handelSubmit, action, handleCancel }) => {
   const { users, categories } = useContext(EventContext);
   const [value, setValue] = useState(-1);
-  //const [value, setValue] = useState("1");
   const [formData, setFormData] = useState({
     title: "",
     description: "",
