@@ -21,7 +21,7 @@ export const AddEvent = () => {
   //create a new event
   const createEvent = async (event) => {
     const response = await fetch(
-      "https://git.heroku.com/event-data.git/events",
+      "https://event-data-16fda6375eb3.herokuapp.com/events",
       {
         method: "POST",
         body: JSON.stringify(event),
