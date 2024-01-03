@@ -12,9 +12,7 @@ export const DATE_OPTIONS = {
   day: "numeric",
 };
 
-
-
-export const URL = "https://event-data-16fda6375eb3.herokuapp.com/";
+export const URL = "https://event-data-16fda6375eb3.herokuapp.com";
 
 export const Root = () => {
   const [users, setUsers] = useState([]);
